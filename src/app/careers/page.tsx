@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/GlassCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -62,32 +63,61 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-hero-pattern py-16 sm:py-20">
+      <section className="relative bg-hero-pattern py-16 sm:py-20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-steel uppercase tracking-wider mb-3">
-              Careers
-            </p>
-            <h1 className="text-4xl sm:text-5xl font-bold text-steel-dark tracking-tight leading-[1.15]">
-              Build Your Future
-              <br />
-              with MSS Steel Tubes
-            </h1>
-            <p className="mt-5 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Join a world-class manufacturing team in Memphis. We&apos;re creating{" "}
-              <strong>129 new jobs</strong> and looking for dedicated professionals
-              ready to grow with a global industry leader.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-steel/8 text-steel-dark text-xs font-semibold">
-                <MapPin className="h-3.5 w-3.5" />
-                Memphis, TN
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-accent/8 text-amber-accent text-xs font-semibold">
-                <Users className="h-3.5 w-3.5" />
-                129 Openings
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold text-steel uppercase tracking-wider mb-3">
+                Careers
+              </p>
+              <h1 className="text-4xl sm:text-5xl font-bold text-steel-dark tracking-tight leading-[1.15]">
+                Build Your Future
+                <br />
+                with MSS Steel Tubes
+              </h1>
+              <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+                Join a world-class manufacturing team in Memphis. We&apos;re creating{" "}
+                <strong>129 new jobs</strong> and looking for dedicated professionals
+                ready to grow with a global industry leader.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-steel/8 text-steel-dark text-xs font-semibold">
+                  <MapPin className="h-3.5 w-3.5" />
+                  Memphis, TN
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-accent/8 text-amber-accent text-xs font-semibold">
+                  <Users className="h-3.5 w-3.5" />
+                  129 Openings
+                </div>
               </div>
             </div>
+            <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-elevated">
+              <Image
+                src="/images/worker-welding.jpg"
+                alt="Skilled welder at MSS Steel Tubes"
+                width={560}
+                height={400}
+                className="object-cover w-full aspect-[7/5]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Manufacturing Workplace */}
+      <section className="relative h-64 sm:h-80 overflow-hidden">
+        <Image
+          src="/images/careers-training.jpg"
+          alt="Employee training at MSS Steel Tubes"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-steel-dark/70 to-transparent flex items-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+            <p className="text-amber-accent text-sm font-semibold uppercase tracking-wider mb-2">Join Our Team</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white max-w-md">
+              Learn. Grow.<br />Build with Us.
+            </h2>
           </div>
         </div>
       </section>

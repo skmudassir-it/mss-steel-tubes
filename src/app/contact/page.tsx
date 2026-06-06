@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/GlassCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -60,6 +61,22 @@ export default function ContactPage() {
       {/* Contact Grid */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Office image */}
+          <div className="relative rounded-2xl overflow-hidden shadow-elevated h-48 sm:h-64 lg:h-72 mb-12">
+            <Image
+              src="/images/contact-office.jpg"
+              alt="MSS Steel Tubes office and reception"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-steel-dark/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-6">
+              <p className="text-white text-lg font-bold">Visit Us in Memphis</p>
+              <p className="text-white/70 text-sm">4129R Outland Road, Memphis, TN 38118</p>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
@@ -202,6 +219,19 @@ export default function ContactPage() {
 
             {/* Info sidebar */}
             <div className="lg:col-span-2 space-y-4">
+              {/* Memphis skyline */}
+              <div className="relative rounded-xl overflow-hidden shadow-soft h-32 sm:h-40">
+                <Image
+                  src="/images/memphis-skyline.jpg"
+                  alt="Memphis, Tennessee skyline"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-steel-dark/50 to-transparent flex items-end p-3">
+                  <p className="text-white text-xs font-semibold">Memphis, Tennessee</p>
+                </div>
+              </div>
+
               {contactInfo.map((item) => (
                 <GlassCard key={item.title} padding="md">
                   <div className="flex gap-3">

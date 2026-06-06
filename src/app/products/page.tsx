@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/GlassCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -46,21 +47,32 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-hero-pattern py-16 sm:py-20">
+      <section className="relative bg-hero-pattern py-16 sm:py-20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-steel uppercase tracking-wider mb-3">
-              Products
-            </p>
-            <h1 className="text-4xl sm:text-5xl font-bold text-steel-dark tracking-tight leading-[1.15]">
-              Steel Tubes Built for
-              <br />
-              Solar Manufacturing
-            </h1>
-            <p className="mt-5 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Purpose-engineered structural steel tubes for solar panel mounting
-              systems, tracker assemblies, and renewable energy infrastructure.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold text-steel uppercase tracking-wider mb-3">
+                Products
+              </p>
+              <h1 className="text-4xl sm:text-5xl font-bold text-steel-dark tracking-tight leading-[1.15]">
+                Steel Tubes Built for
+                <br />
+                Solar Manufacturing
+              </h1>
+              <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+                Purpose-engineered structural steel tubes for solar panel mounting
+                systems, tracker assemblies, and renewable energy infrastructure.
+              </p>
+            </div>
+            <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-elevated">
+              <Image
+                src="/images/product-stack.jpg"
+                alt="Precision steel tubes manufactured by MSS Steel Tubes"
+                width={560}
+                height={400}
+                className="object-cover w-full aspect-[7/5]"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -105,6 +117,14 @@ export default function ProductsPage() {
             </div>
 
             <div className="space-y-4">
+              <div className="relative rounded-2xl overflow-hidden shadow-elevated h-48 sm:h-56">
+                <Image
+                  src="/images/cnc-machinery.jpg"
+                  alt="CNC tube forming machinery at MSS Steel Tubes"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <GlassCard padding="lg">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-accent/10">
@@ -167,8 +187,16 @@ export default function ProductsPage() {
       </section>
 
       {/* Logistics */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 sm:py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <Image
+            src="/images/truck-loading.jpg"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-steel-gradient shadow-soft mx-auto mb-6">
               <Truck className="h-7 w-7 text-white" />

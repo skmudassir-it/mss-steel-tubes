@@ -49,8 +49,16 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-hero-pattern py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-hero-pattern py-16 sm:py-20 overflow-hidden">
+        <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 hidden lg:block">
+          <Image
+            src="/images/about-history.jpg"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-steel uppercase tracking-wider mb-3">
               About Us
@@ -130,6 +138,23 @@ export default function AboutPage() {
                 </GlassCard>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Heritage Image */}
+      <section className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+        <Image
+          src="/images/team-collaboration.jpg"
+          alt="MSS Steel Tubes manufacturing team"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-steel-dark/60 to-transparent flex items-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white max-w-lg">
+              Five Decades of<br />Steel Excellence
+            </h2>
           </div>
         </div>
       </section>
@@ -222,14 +247,24 @@ export default function AboutPage() {
             title="Global Presence, Local Commitment"
             subtitle="With facilities spanning four continents, Metalogalva Group brings international expertise to every project."
           />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {globalLocations.map((loc) => (
-              <GlassCard key={loc.region} padding="md" hover className="text-center">
-                <MapPin className="h-6 w-6 text-steel mx-auto mb-3" />
-                <h4 className="font-bold text-steel-dark mb-1">{loc.region}</h4>
-                <p className="text-sm text-muted-foreground">{loc.countries}</p>
-              </GlassCard>
-            ))}
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
+            <div className="lg:col-span-2 relative rounded-2xl overflow-hidden shadow-elevated h-64 sm:h-80">
+              <Image
+                src="/images/global-presence.jpg"
+                alt="MSS Steel Tubes global presence across four continents"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="lg:col-span-3 grid grid-cols-2 gap-4 sm:gap-6">
+              {globalLocations.map((loc) => (
+                <GlassCard key={loc.region} padding="md" hover className="text-center">
+                  <MapPin className="h-6 w-6 text-steel mx-auto mb-3" />
+                  <h4 className="font-bold text-steel-dark mb-1">{loc.region}</h4>
+                  <p className="text-sm text-muted-foreground">{loc.countries}</p>
+                </GlassCard>
+              ))}
+            </div>
           </div>
         </div>
       </section>
