@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Factory, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type FooterLink = { href: string; label: string; external?: boolean };
@@ -25,8 +26,14 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 shadow-soft">
-                <Factory className="h-5 w-5 text-white" />
+              <div className="relative h-9 w-9 overflow-hidden rounded-lg bg-white/15 shadow-soft">
+                <Image
+                  src="/images/logo-mss.png"
+                  alt="MSS Steel Tubes"
+                  width={36}
+                  height={36}
+                  className="object-cover"
+                />
               </div>
               <div>
                 <p className="text-sm font-bold leading-tight text-white">

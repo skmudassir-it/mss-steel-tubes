@@ -22,12 +22,17 @@ export const metadata: Metadata = {
     "MSS Steel Tubes", "steel tubes", "Memphis manufacturing", "solar panel tubes",
     "Metalogalva Group", "Soufer Group", "steel production", "Tennessee manufacturing",
   ],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/images/logo-mss.png",
+  },
   openGraph: {
     title: "MSS Steel Tubes USA LLC | Premium Steel Tubes — Memphis, TN",
     description:
       "$6M steel tubes production plant in Memphis, TN. Serving U.S. solar manufacturers. 129 new jobs.",
     type: "website",
     locale: "en_US",
+    images: ["/images/hero-sunrise.jpg"],
   },
 };
 

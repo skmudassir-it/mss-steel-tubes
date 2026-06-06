@@ -44,8 +44,18 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-hero-pattern">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-sunrise.jpg"
+            alt="MSS Steel Tubes manufacturing facility"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/40" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-steel/8 text-steel-dark text-xs font-semibold tracking-wide mb-6">
@@ -84,12 +94,11 @@ export default function HomePage() {
             <div className="hidden lg:block relative">
               <div className="relative rounded-2xl overflow-hidden shadow-elevated">
                 <Image
-                  src="/images/hero-facility.jpg"
-                  alt="MSS Steel Tubes manufacturing facility in Memphis"
+                  src="/images/production-action.jpg"
+                  alt="Steel tubes manufacturing in action at MSS"
                   width={640}
                   height={480}
                   className="object-cover w-full aspect-[4/3]"
-                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-steel-dark/20 to-transparent" />
               </div>
@@ -194,7 +203,7 @@ export default function HomePage() {
       <section className="relative py-20 sm:py-28 bg-steel-dark overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <Image
-            src="/images/factory-floor.jpg"
+            src="/images/team-pride.jpg"
             alt=""
             fill
             className="object-cover"
